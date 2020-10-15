@@ -1,2 +1,2 @@
 # productivity-scripts
-Scripts I use to increase productivty on my development workstation
+Scripts I use to increase productivity on my development workstation
