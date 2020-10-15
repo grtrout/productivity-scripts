@@ -3,18 +3,19 @@
 
 if [ $# == 0 ]
 then
-  echo "Provide IP and port or just a port to default IP to 127.0.0.1"
+  printf "To check a specific port, provide IP and port (or just a port to default IP to 127.0.0.1)\n\n"
+  ss -tulwn
 fi
 
 if [ $# == 1 ]
 then
-  echo "Checking if port $1 on 127.0.0.1 is in use or free..."
-  nc -z "127.0.0.1" "$1" && echo "IN USE" || echo "FREE"
+  printf "Checking if 127.0.0.1:$1 is in use or free...\n"
+  nc -z "127.0.0.1" "$1" && printf "IN USE\n" || printf "FREE\n"
 fi
 
 if [ $# == 2 ]
 then
-  echo "Checking if port $2 on $1 is in use or free..."
-  nc -z "$1" "$2" && echo "IN USE" || echo "FREE"
+  printf "Checking if $1:$2 is in use or free...\n"
+  nc -z "$1" "$2" && printf "IN USE\n" || printf "FREE\n"
 fi
 
